@@ -2,11 +2,10 @@
 
 from dotenv import load_dotenv
 import os
-import base64
 from requests import post, get
 import json
 from urllib.parse import urlencode, quote
-from flask import Flask, request, redirect, url_for, render_template
+from flask import request
 import random
 import string
 
