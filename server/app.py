@@ -95,7 +95,7 @@ def retToken(state):
 
 @app.route("/")
 def index():
-    return "success"
+    return "success1"
 
 
 if __name__ == "__main__":
