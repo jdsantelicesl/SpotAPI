@@ -17,6 +17,8 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.getenv("SECRET_KEY")
 
+reactUrl = "http://192.168.1.16:3000/"
+
 
 @app.before_request
 def before_request():
@@ -75,7 +77,7 @@ def callback():
     with open("tokens.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
-    return redirect("http://192.168.1.16:3000/redirect")
+    return redirect(reactUrl + "redirect")
 
 
 @app.route("/getToken/<state>")

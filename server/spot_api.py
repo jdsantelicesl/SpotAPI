@@ -9,13 +9,15 @@ from flask import request
 import random
 import string
 
+serverUrl = "https://spot-mix-bd5608e94c9e.herokuapp.com/"
+
 
 def redUser():
     load_dotenv()
     client_id = os.getenv("CLIENT_ID")  # Not user specific, but specific to project
     client_secret = os.getenv("CLIENT_SECRET")
 
-    redirect_uri = "http://192.168.1.16:8888/callback"
+    redirect_uri = serverUrl + "callback"
 
     alphabet = string.ascii_letters + string.digits
     random_string = "".join(
@@ -65,7 +67,7 @@ def getToken():
     client_id = os.getenv("CLIENT_ID")  # Not user specific, but specific to project
     client_secret = os.getenv("CLIENT_SECRET")
 
-    redirect_uri = "http://192.168.1.16:8888/callback"
+    redirect_uri = serverUrl + "callback"
 
     code = request.args.get("code")
     state = request.args.get("state")
