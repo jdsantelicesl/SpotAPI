@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.getenv("SECRET_KEY")
 
-reactUrl = "http://192.168.1.16:3000/"
+reactUrl = "https://65a60ad7a2c4047811234569--spotstatsmixer.netlify.app/"
 
 
 @app.before_request
